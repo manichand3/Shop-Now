@@ -20,15 +20,21 @@ function Cart() {
   });
   console.log(CartBox);
   return (
-    <div className="bg-amber-100">
+    <div>
       {CartBox.map((item) => {
         return (
-          <div key={item.id}>
+          <div
+            className="hover:bg-blue-200 rounded-2xl pl-16 p-2 m-5 w-100 bg-blue-100"
+            key={item.id}
+          >
             <div>
               <img className="h-64" src={item.thumbnail}></img>
             </div>
             <div>
               <p>{item.title}</p>
+              <p>Price- {item.price}</p>
+              <p>quantity-{item.quantity}</p>
+              <p>Total-{(item.price * item.quantity).toFixed(2)}</p>
             </div>
           </div>
         );
